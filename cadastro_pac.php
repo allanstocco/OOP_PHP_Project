@@ -1,5 +1,4 @@
 <?php
-
 include_once 'config/database.php';
 include_once 'objetos/Pacientes.php';
 include_once 'objetos/Profissionais.php';
@@ -20,7 +19,7 @@ $page_title = "Cadastrar Paciente:";
 include_once "layout_header.php";
 
 echo "<div class='right-button-margin'>
-        <a href='index.php' class='btn btn-default pull-right'>Pacientes</a>
+        <a href='index.php' class='btn btn-default pull-right'>Inicio</a>
     </div>";
 
 // Cadastro --------------------------------------------------------------------
@@ -104,7 +103,7 @@ if ($_POST) {
                 // COLOCA PROFISSIONAIS EM DROPDOWN:
 
                 echo "<select class='form-control' name='profissionais_id'>";
-                echo "<option>Selecione um Profissional...</option>";
+                echo "<option>Selecionar...</option>";
 
                 while ($row_profissionais = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     extract($row_profissionais);

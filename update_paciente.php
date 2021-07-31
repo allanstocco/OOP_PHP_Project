@@ -102,7 +102,7 @@ if ($_POST) {
 
                 echo "<select class='form-control' name='profissionais_id'>";
 
-                echo "<option>Selecione...</option>";
+                echo "<option>Selecionar...</option>";
                 while ($row_profissionais = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     $profissionais_id = $row_profissionais['id'];
                     $profissionais_name = $row_profissionais['name'];

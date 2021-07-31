@@ -33,11 +33,14 @@ $stmt = $pacientes->readAll($from_record_num, $records_per_page);
 $num = $stmt->rowCount();
 
 // LAYOUT HEADER 
-$page_title = "Pacientes";
+$page_title = "Inicio";
 include_once "layout_header.php";
 
 echo "<div class='right-button-margin'>
-    <a href='cadastro_pac.php' class='btn btn-default pull-right'>Cadastrar</a>
+    <a href='cadastro_pac.php' class='btn btn-default pull-right'>Novo Paciente</a>
+</div>";
+echo "<div class='right-button-margin'>
+    <a href='cadastro_prof.php' class='btn btn-default pull-right'>Novo Profissional</a>
 </div>";
 
 if ($num > 0) {
@@ -75,7 +78,6 @@ if ($num > 0) {
         echo $profissionais->surname;
         echo " - " . $profissionais->especialidade;
         echo "</td>";
-
         echo "<td>";
         echo "<a href='leitura_pac.php?id={$id}' class='btn btn-primary left-margin'>
               <span class='glyphicon glyphicon-list'></span> Ler
