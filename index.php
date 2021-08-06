@@ -37,11 +37,10 @@ $page_title = "Inicio";
 include_once "layout_header.php";
 
 echo "<div class='right-button-margin'>
-    <a href='cadastro_pac.php' class='btn btn-default pull-right'>Novo Paciente</a>
-</div>";
-echo "<div class='right-button-margin'>
-    <a href='cadastro_prof.php' class='btn btn-default pull-right'>Novo Profissional</a>
-</div>";
+    <a href='cadastro_pac.php' class='btn btn-default pull-right' style='color: blue;'>Novo Paciente</a>
+    <a href='cadastro_prof.php' class='btn btn-default pull-right' style='color: blue;'>Novo Profissional</a>
+    <a href='agendamento.php' class='btn btn-default pull-right' style='color: blue;'>Agendamentos</a>
+    </div>";
 
 if ($num > 0) {
 
@@ -73,21 +72,19 @@ if ($num > 0) {
         echo "<td>{$description}</td>";
         echo "<td>";
         $profissionais->id = $profissionais_id;
+        if ($profissionais->id == false){
+            echo "Nenhum profissional registrado.";
+        } else {
         $profissionais->readName();
         echo $profissionais->name . " ";
         echo $profissionais->surname;
         echo " - " . $profissionais->especialidade;
-        echo "</td>";
+        echo "</td>";}
         echo "<td>";
-        echo "<a href='leitura_pac.php?id={$id}' class='btn btn-primary left-margin'>
-              <span class='glyphicon glyphicon-list'></span> Ler
-              </a>
-              <a href='update_paciente.php?id={$id}' class='btn btn-info left-margin'>
-              <span class='glyphicon glyphicon-edit'></span> Editar
-              </a>
-              <a delete-id='{$id}' class='btn btn-danger delete-object'>
-              <span class='glyphicon glyphicon-remove'></span> Excluir
-              </a>";
+        echo "<a href='leitura_pac.php?id={$id}' class='btn btn-default pull-left' style='background-color: #222227; color: beige;'>Ler</a>
+              <a href='update_paciente.php?id={$id}' class='btn btn-default pull-left' style='background-color: #222227; color: beige;'>Editar</a>
+              <a delete-id='{$id}' class='btn btn-default pull-left' style='background-color: #222227; color: beige;'>Excluir</a>
+              <a href='cadastro_agen.php' class='btn btn-default pull-left' style='background-color: #222227; color: beige;'>Agendar Paciente</a>";
         echo "</td>";
 
         echo "</tr>";

@@ -10,7 +10,7 @@ $db = $database->getConnection();
 
 // Instancia os objetos já com a conexão ao BancoDados -------------------------
 
-$pacientes = new Pacientes($db);
+$pacientes = new Pacientes($db);    
 $profissionais = new Profissionais($db);
 
 // Inclue Layout_header --------------------------------------------------------
@@ -87,7 +87,7 @@ if ($_POST) {
         </tr>
         <tr>
             <td>Descrição:</td>
-            <td><textarea name='description' class='form-control'></textarea></td>
+            <td><textarea name='description' class='form-control' ></textarea></td>
         </tr>
         <tr>
             <td>Consulta / Profissional:</td>
