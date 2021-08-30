@@ -5,12 +5,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 <script src="libs/js/calendario.js"></script>
 
-<!-- https://www.blogson.com.br/como-formatar-campos-de-cpf-cep-telefone-e-moeda-com-jquery-jmask/ -->
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 <script>
-// JS DELETAR PRODUTO:
     $(document).on('click', '.delete-object', function () {
 
         var id = $(this).attr('delete-id');

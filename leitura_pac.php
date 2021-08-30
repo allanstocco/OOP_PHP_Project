@@ -70,13 +70,16 @@ echo "<td>Profissional:</td>";
 echo "<td>";
 // Mostra o nome do Profissional
 $profissionais->id = $pacientes->profissionais_id;
-$profissionais->readName();
-echo $profissionais->name . " ";
-echo $profissionais->surname;
-echo " - " . $profissionais->especialidade;
-echo "</td>";
-echo "</tr>";
-
+if ($profissionais->id == false) {
+    echo "Nenhum profissional registrado.";
+} else {
+    $profissionais->readName();
+    echo $profissionais->name . " ";
+    echo $profissionais->surname;
+    echo " - " . $profissionais->especialidade;
+    echo "</td>";
+    echo "</tr>";
+}
 echo "</table>";
 
 // footer

@@ -17,6 +17,7 @@ $from_record_num = ($records_per_page * $page) - $records_per_page;
 include_once 'config/database.php';
 include_once 'objetos/Pacientes.php';
 include_once 'objetos/Profissionais.php';
+include_once 'objetos/Agendamento.php';
 
 // Faz a conexão com o BancoDados ----------------------------------------------
 
@@ -36,11 +37,12 @@ $num = $stmt->rowCount();
 $page_title = "Inicio";
 include_once "layout_header.php";
 
-echo "<div class='right-button-margin'>
-    <a href='cadastro_pac.php' class='btn btn-default pull-right' style='color: blue;'>Novo Paciente</a>
+echo "<div class='right-button-margin' style='float: left;'>
     <a href='cadastro_prof.php' class='btn btn-default pull-right' style='color: blue;'>Novo Profissional</a>
-    <a href='agendamento.php' class='btn btn-default pull-right' style='color: blue;'>Agendamentos</a>
+    <a href='cadastro_pac.php' class='btn btn-default pull-right' style='color: blue;'>Novo Paciente</a>
     </div>";
+    
+echo "<div class='right-button-margin'><a href='calendario.php' class='btn btn-default pull-right' style='color: blue;'>Agendamentos</a></div>";
 
 if ($num > 0) {
 
@@ -53,7 +55,7 @@ if ($num > 0) {
     echo "<th>Telefone</th>";
     echo "<th>E-mail</th>";
     echo "<th>Descrição</th>";
-    echo "<th>Profissional</th>";
+    /*echo "<th>Profissional</th>";*/
     echo "<th>Ações</th>";
     echo "</tr>";
 
@@ -70,21 +72,22 @@ if ($num > 0) {
         echo "<td>{$telefone}</td>";
         echo "<td>{$email}</td>";
         echo "<td>{$description}</td>";
-        echo "<td>";
+        /* echo "<td>";
         $profissionais->id = $profissionais_id;
-        if ($profissionais->id == false){
+        if ($profissionais->id == false) {
             echo "Nenhum profissional registrado.";
         } else {
-        $profissionais->readName();
-        echo $profissionais->name . " ";
-        echo $profissionais->surname;
-        echo " - " . $profissionais->especialidade;
-        echo "</td>";}
+            $profissionais->readName();
+            echo $profissionais->name . " ";
+            echo $profissionais->surname;
+            echo " - " . $profissionais->especialidade;
+            echo "</td>";
+        }*/
         echo "<td>";
         echo "<a href='leitura_pac.php?id={$id}' class='btn btn-default pull-left' style='background-color: #222227; color: beige;'>Ler</a>
               <a href='update_paciente.php?id={$id}' class='btn btn-default pull-left' style='background-color: #222227; color: beige;'>Editar</a>
               <a delete-id='{$id}' class='btn btn-default pull-left' style='background-color: #222227; color: beige;'>Excluir</a>
-              <a href='cadastro_agen.php' class='btn btn-default pull-left' style='background-color: #222227; color: beige;'>Agendar Paciente</a>";
+              <a href='cadastro_agen.php?id={$id}' class='btn btn-default pull-left' style='background-color: #222227; color: beige;'>Agendar Paciente</a>";
         echo "</td>";
 
         echo "</tr>";
