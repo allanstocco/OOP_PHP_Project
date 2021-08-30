@@ -29,8 +29,8 @@ if ($_POST) {
 
     $pacientes->name = $_POST['name'];
     $pacientes->surname = $_POST['surname'];
-    //$pacientes->ts1 = $_POST['ts1']; Need to be terminated
-    //$pacientes->ts2 = $_POST['ts2']; Need to be terminated
+    //$pacientes->ts1 = $_POST['ts1']; 
+    //$pacientes->ts2 = $_POST['ts2'];
     $pacientes->cpf = $_POST['cpf'];
     $pacientes->telefone = $_POST['telefone'];
     $pacientes->email = $_POST['email'];
@@ -49,7 +49,7 @@ if ($_POST) {
 }
 ?>
 
-<!----------------- HTML renderizará o Paciente ------------------------------->
+<!----------------- HTML renderiza Paciente ------------------------------->
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
@@ -79,7 +79,7 @@ if ($_POST) {
         </tr>
         <tr>
             <td>Telefone:</td>
-            <td><input type='text' name='telefone' onkeypress="$(this).mask('(00) 0000-00009')" class='form-control' /></td>
+            <td><input type='text' name='telefone' onkeypress="$(this).mask('(00) 00000-0009')" class='form-control' /></td>
         </tr>
         <tr>
             <td>E-mail:</td>
@@ -87,16 +87,17 @@ if ($_POST) {
         </tr>
         <tr>
             <td>Descrição:</td>
-            <td><textarea name='description' class='form-control' ></textarea></td>
+            <td><textarea name='description' class='form-control' maxlength="50" ></textarea></td>
         </tr>
-        <tr>
+        <!------------------------ Desativado Opção Selecionar Prof no Cadastro
+            <tr>
             <td>Consulta / Profissional:</td>
             <td>
 
-                <!------------- Profissionais DropDown ------------------------>
+                Profissionais DropDown
 
                 <?php
-                // LÊ PROFISSIONAIS DO BATABASE:
+                /* LÊ PROFISSIONAIS DO BATABASE:
 
                 $stmt = $profissionais->read();
 
@@ -111,10 +112,12 @@ if ($_POST) {
                 }
 
                 echo "</select>";
+                 
+                 */
                 ?>
             </td>
         </tr>
-
+        ----------------------------------------------------------------------->
         <tr>
             <td></td>
             <td>

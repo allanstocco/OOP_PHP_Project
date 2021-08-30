@@ -90,12 +90,14 @@ if ($_POST) {
         </tr>
         <tr>
             <td>Descrição</td>
-            <td><textarea name='description' class='form-control'><?php echo $pacientes->description; ?></textarea></td>
+            <td><textarea name='description' class='form-control' maxlength="50"><?php echo $pacientes->description; ?></textarea></td>
         </tr>
+        <!---------------------------------- Desativado Opcao Prof ao atualizar
         <tr>
             <td>Profissionais</td>
             <td>
                 <?php
+                /*
                 $stmt = $profissionais->read();
 
                 // PROFISSIONAIS DROPDOWN LIST:
@@ -120,10 +122,11 @@ if ($_POST) {
                     echo "$profissionais_name $profissionais_surname - $profissionais_especialidade</option>";
                 }
                 echo "</select>";
+                 */
                 ?>
             </td>
         </tr>
-
+        ----------------------------------------------------------------------->
         <tr>
             <td></td>
             <td>
